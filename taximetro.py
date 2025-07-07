@@ -14,14 +14,30 @@ def calcular_tarifa(kilometros, tiempo_parado, tiempo_movimiento):
     tarifa_movimiento = tiempo_movimiento * 0.05  #Coste por cade  segundo en movimiento
     tarifa_total = tarifa_base + tarifa_kilometro + tarifa_parado + tarifa_movimiento
     return tarifa_total  # Devolvemos o retornamos la TARIFA_TOTAL
-
-#Definimos la funcion que imprime la factura
-def mostar_factura(kilometros, tiempo_movimiento, tiempo_parado, tarifa_total):
+#Definimos la funcion que imprime la factura en pantalla 
+def mostrar_factura(kilometros, tiempo_movimiento, tiempo_parado, tarifa):
     tarifa_base = 2.50 
     tarifa_kilometro = kilometros * 1.50 
     tarifa_parado = tiempo_parado * 0.02  
-    tarifa_movimiento = tiempo_movimiento 
+    tarifa_movimiento = tiempo_movimiento * 0.05
     fecha_actual = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print("\n---------------------------------------------")
+    print("              FACTURA TAXIMETRO                ")
+    print("-----------------------------------------------")
+    print(f"Fecha y hora: {fecha_actual}")
+    print("-----------------------------------------------")
+    print(f"Kilometros recorrido: {kilometros:.2f} km")
+    print(f"Tiempo detenido: {tiempo_parado:.2f}")
+    print(f"Tiempo en movimiento: {tiempo_movimiento:.2f}")
+    print("----------------------------------------------")
+    print(f"Tarifa base:            {tarifa_base:.2f} €")
+    print(f"Tarifa por km:          {tarifa_kilometro:.2f} €")
+    print(f"Tarifa detenido:        {tarifa_parado:.2f} €")
+    print(f"Tarifa en movimiento:   {tarifa_movimiento:.2f} €")
+    print("----------------------------------------------")
+    print(f"TOTAL A PAGAR:          {tarifa:.2f}")
+    print("----------------------------------------------")
+
     
 #Funcion principal del programa
 def taximetro():
@@ -127,10 +143,14 @@ def taximetro():
                 print("---------------------------------------------------------------")
                 #Mostramo sla duracion total del trayecto
                 mostrar_duracion_total(tiempo_movimiento, tiempo_parado)
+                respuesta = input("¿Deseas ver la factura ahora? (s/n): ").strip().lower()
+                if respuesta == 's':
+                     mostrar_factura(kilometros, tiempo_movimiento, tiempo_parado, tarifa)
                 #Reiniciamos variables para un nuevo trayecto
                 viaje_iniciado = False
                 estado = None
                 tiempo_inicio_estado = 0
+        
         elif opcion == "4":
                 #Salimos del programa
                 print("Gracias por usar el TAXIMETRO FACTORIA F5....     !")
