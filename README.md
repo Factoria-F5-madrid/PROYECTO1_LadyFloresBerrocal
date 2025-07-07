@@ -17,4 +17,5 @@ Lady Pricilla Flores Berrocal
 Tecnologías a Utilizar
 
 Python
+
 Git y GitHub para el control de versiones
