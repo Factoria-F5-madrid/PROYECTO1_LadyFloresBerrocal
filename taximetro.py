@@ -12,6 +12,13 @@ def calcular_tarifa(kilometros, tiempo_parado, tiempo_movimiento):
     tarifa_movimiento = tiempo_movimiento * 0.05  #Coste por cade  segundo en movimiento
     tarifa_total = tarifa_base + tarifa_kilometro + tarifa_parado + tarifa_movimiento
     return tarifa_total  # Devolvemos o retornamos la TARIFA_TOTAL
+#Definimos la funcion que imprime la factura
+def mostar_factura(kilometros, tiempo_movimiento, tiempo_parado):
+    tarifa_base = 2.50 
+    tarifa_kilometro = kilometros * 1.50 
+    tarifa_parado = tiempo_parado * 0.02  
+    tarifa_movimiento = tiempo_movimiento 
+    tarifa_total = tarifa_base + tarifa_kilometro + tarifa_parado + tarifa_movimiento
 #Funcion principal del programa
 def taximetro():
     #Bienvenida y explicacion del prototipo
