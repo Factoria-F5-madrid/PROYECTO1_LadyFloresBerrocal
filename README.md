@@ -13,3 +13,8 @@ Desarrollar un programa CLI(Interfaz de Comandos)  en Python
 Participantes
 
 Lady Pricilla Flores Berrocal
+
+Tecnologías a Utilizar
+
+Python
+Git y GitHub para el control de versiones
